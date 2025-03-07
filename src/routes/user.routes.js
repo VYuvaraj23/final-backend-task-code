@@ -18,16 +18,16 @@ import authGuard from "../middleware/authGuard.middleware.js";
 
 const router = express.Router();
 
-router.post("/signup", payloadValidator(createUserSchema), createUser);
-router.post("/signin", payloadValidator(signinSchema), signin);
-router.get("/:id", authGuard, getIDByUser);
+router.post("signup", payloadValidator(createUserSchema), createUser);
+router.post("signin", payloadValidator(signinSchema), signin);
+router.get(":id", authGuard, getIDByUser);
 router.post(
   "/forgot-password",
   payloadValidator(forgetPasswordSchema),
   forgotPassword
 );
 router.put(
-  "/reset-password",
+  "reset-password",
   payloadValidator(resetPasswordSchema),
   authGuard,
   resetPassword

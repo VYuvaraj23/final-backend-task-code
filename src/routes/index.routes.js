@@ -3,7 +3,7 @@ import usersRoutes from "./user.routes.js";
 
 const router = express.Router();
 
-router.use("/users", usersRoutes);
+router.use("/", usersRoutes);
 
 router.get("/", (req, res) => {
   res
